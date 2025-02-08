@@ -1,101 +1,100 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --bg-primary: rgb(217, 218, 212);
-            --accent-dark: #4A4B45;
-            --accent-medium: #7A7B74;
-            --text-dark: #2C2C2A;
-            --white: #FFFFFF;
-        }
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: rgb(217, 218, 212);
+      --accent-dark: #4A4B45;
+      --accent-medium: #7A7B74;
+      --text-dark: #2C2C2A;
+      --white: #FFFFFF;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
 
-    
-        .header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            height: 100px;
-            z-index: 1000;
-            background: black;
-          
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
-        }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-            padding-top: 20px;
-        }
+    .header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 100px;
+      z-index: 1000;
+      background: black;
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+    }
 
-        .logo-icon {
-            width: 45px;
-            height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--white);
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+      padding-top: 20px;
+    }
 
-        .logo-text {
-            color: var(--text-dark);
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-        }
+    .logo-icon {
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
 
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 0.5rem 0;
-        }
+    .logo-text {
+      color: var(--text-dark);
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background: var(--accent-dark);
-            transition: width 0.3s ease;
-        }
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+    }
 
-        .nav-links a:hover::after {
-            width: 100%;
-        }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 0.5rem 0;
+    }
 
-        
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background: var(--accent-dark);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
 
 
 
@@ -103,471 +102,470 @@
 
 
 
-   
 
 
 
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes floatImage {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        @media (max-width: 968px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 2rem;
-            }
-
-            .hero-image {
-                order: -1;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: #2c1b3d;
-                padding: 1rem;
-                flex-direction: column;
-                align-items: center;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo-text {
-                font-size: 1.2rem;
-            }
-
-            .hero-button {
-                width: 100%;
-                text-align: center;
-            }
-        }
 
 
-        .hero {
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes floatImage {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 968px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+      }
+
+      .hero-image {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #2c1b3d;
+        padding: 1rem;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo-text {
+        font-size: 1.2rem;
+      }
+
+      .hero-button {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+
+    .hero {
       background-image: url('/api/placeholder/1200/400');
       background-size: cover;
       background-position: center;
-     
+
       display: flex;
       align-items: center;
       justify-content: center;
       color: black;
     }
+
     .product-card {
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
       transition: all 0.3s ease;
     }
+
     .product-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     }
 
     .logo {
-        width: 100px;
-        height: 60px;
+      width: 100px;
+      height: 60px;
     }
-    </style>
+  </style>
 </head>
+
 <body>
-    <a
-    href="https://wa.me/5511937088040" 
-    target="_blank" 
+  <a href="https://wa.me/5511937088040" target="_blank"
     class="fixed bottom-6 right-6 bg-green-500 text-white rounded-full shadow-lg p-4 hover:bg-green-600 transition-transform transform hover:scale-105"
-    aria-label="Contact us on WhatsApp"
->
+    aria-label="Contact us on WhatsApp">
     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp Icon" class="w-8 h-8">
-</a>
-    
+  </a>
 
-    <header class="header">
-        <nav class="nav-container">
-            <div class="logo-container">
-                <img class="logo" src="logo.jpeg"/>
-            </div>
-            <button class="mobile-menu-btn">☰</button>
-            <div class="nav-links">
-                <a href="#curso">Curso</a>
-                <a href="#sobre">Sobre</a>
-                <a href="#depoimentos">Depoimentos</a>
-                <a href="#contato">Contato</a>
-            </div>
-        </nav>
-    </header>
-    
-    <section class="hero bg-cover bg-center h-screen flex items-center justify-center text-center" style="background-image: url('male-worker-using-machinery-juice-factory.jpg');">
-      <div class="bg-black bg-opacity-50 p-8 rounded-lg">
-        <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-4">Bem-vindo ao Grupo DJL</h1>
-        <p class="text-lg md:text-xl text-gray-200 mb-6">
-          Capacitando empresas com soluções inovadoras e um serviço excepcional.
-        </p>
-        <a href="#about" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300">
-          Saiba Mais
-        </a>
+
+  <header class="header">
+    <nav class="nav-container">
+      <div class="logo-container">
+        <img class="logo" src="logo.jpeg" />
       </div>
-</section>
+      <button class="mobile-menu-btn">☰</button>
+      <div class="nav-links">
+        <a href="#curso">Curso</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero bg-cover bg-center h-screen flex items-center justify-center text-center"
+    style="background-image: url('male-worker-using-machinery-juice-factory.jpg');">
+    <div class="bg-black bg-opacity-50 p-8 rounded-lg">
+      <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-4">Bem-vindo ao Grupo DJL</h1>
+      <p class="text-lg md:text-xl text-gray-200 mb-6">
+        Capacitando empresas com soluções inovadoras e um serviço excepcional.
+      </p>
+      <a href="#about"
+        class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300">
+        Saiba Mais
+      </a>
+    </div>
+  </section>
 
 
 
-    <main>
-       
-
-       
-          
-
-
-    
-
-
-
-
-
-
-
-
-      <section class="container mx-auto my-12 px-4">
-        <h2 class="text-4xl font-extrabold text-center mb-12 text-gray-900">Nossos produtos</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          <!-- Product Card 1 -->
-          <div class="product-card bg-white shadow-lg hover:shadow-2xl transition-transform transform hover:scale-105 rounded-2xl overflow-hidden border border-gray-200">
-            <div class="relative w-full h-56 overflow-hidden">
-              <div class="carousel flex w-full h-full">
-                <img src="/product1/s-l1600.webp" alt="Product 1" class="w-full h-full object-cover">
-                <img src="/product1/s-l960 (1).webp" alt="Product 1" class="w-full h-full object-cover hidden">
-                <img src="/product1/s-l960 (2).webp" alt="Product 1" class="w-full h-full object-cover hidden">
-                <img src="/product1/s-l960 (3).webp" alt="Product 1" class="w-full h-full object-cover hidden">
-                <img src="/product1/s-l960 (4).webp" alt="Product 1" class="w-full h-full object-cover hidden">
-              </div>
-            </div>
-            <div class="p-6 text-center">
-              
-              <p class="text-gray-600 mb-4">Olympus X Innov X Delta DPO-2000 Handheld XRF Analyzer W/Alloy Plus MFG 3/2013</p>
-              <p class="text-lg font-bold text-blue-500">US $13,499.96
-              </p>
-              <a href="desc.html" class="mt-4 block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors text-lg font-medium">View More</a>
-            </div>
-          </div>
-          
-          <!-- Product Card 2 -->
-          <div class="product-card bg-white shadow-lg hover:shadow-2xl transition-transform transform hover:scale-105 rounded-2xl overflow-hidden border border-gray-200">
-            <div class="relative w-full h-56 overflow-hidden">
-              <div class="carousel flex w-full h-full">
-                <img src="Screenshot (107).png" alt="Product 2" class="w-full h-full object-cover">
-                <img src="Screenshot (107).png" alt="Product 2" class="w-full h-full object-cover hidden">
-              </div>
-            </div>
-            <div class="p-6 text-center">
-             
-              <p class="text-gray-600 mb-4">DELTA Classic Plus.</p>
-              <p class="text-lg font-bold text-blue-500">$129.99</p>
-              <a href="desc.html" class="mt-4 block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors text-lg font-medium">View More</a>
-            </div>
-          </div>
-
-
-          <div class="product-card bg-white shadow-lg hover:shadow-2xl transition-transform transform hover:scale-105 rounded-2xl overflow-hidden border border-gray-200">
-            <div class="relative w-full h-56 overflow-hidden">
-              <div class="carousel flex w-full h-full">
-                <img src="Screenshot (107).png" alt="Product 2" class="w-full h-full object-cover">
-                <img src="OlympusDeltaDPO-2000-CCAnalisadordeLigasMetalicasFluorescenciaRaio-XXRF_1024x1024 (1).avif" alt="Product 2" class="w-full h-full object-cover hidden">
-              </div>
-            </div>
-            <div class="p-6 text-center">
-             
-              <p class="text-gray-600 mb-4">DELTA Professional</p>
-              <p class="text-lg font-bold text-blue-500">$129.99</p>
-              <a href="desc.html" class="mt-4 block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors text-lg font-medium">View More</a>
-            </div>
-          </div>
-
-
-
-
-          <div class="product-card bg-white shadow-lg hover:shadow-2xl transition-transform transform hover:scale-105 rounded-2xl overflow-hidden border border-gray-200">
-            <div class="relative w-full h-56 overflow-hidden">
-              <div class="carousel flex w-full h-full">
-                <img src="Screenshot (107).png" alt="Product 2" class="w-full h-full object-cover">
-                <img src="Screenshot (107).png" alt="Product 2" class="w-full h-full object-cover hidden">
-              </div>
-            </div>
-            <div class="p-6 text-center">
-              
-              <p class="text-gray-600 mb-4">DELTA Premium
-              </p>
-              <p class="text-lg font-bold text-blue-500">$129.99</p>
-              <a href="desc.html" class="mt-4 block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors text-lg font-medium">View More</a>
-            </div>
-          </div>
+  <main>
 
 
 
 
 
-          
-
-
-        </div>
-      </section>
-      
-      <script>
-        document.querySelectorAll('.carousel').forEach(carousel => {
-          let images = carousel.children;
-          let index = 0;
-          setInterval(() => {
-            images[index].classList.add('hidden');
-            index = (index + 1) % images.length;
-            images[index].classList.remove('hidden');
-          }, 3000);
-        });
-      </script>
-      
-      
-      
 
 
 
 
-      <section style="padding: 80px 20px; text-align: center; font-family: Arial, sans-serif; background: url('senior-businessman-visiting-factory-plant-examining-manufactured-products-with-facility-worker.jpg') center/cover no-repeat; color: white; position: relative;">
-        <div style="background: rgba(0, 0, 0, 0.6); padding: 60px 20px; border-radius: 12px; max-width: 900px; margin: auto;">
-          <h2 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px;">
-            Sobre a DJL Group
-          </h2>
-          <p style="font-size: 1.3rem; max-width: 700px; margin: 0 auto 35px; line-height: 1.6; opacity: 0.9;">
-            A DJL Group nasceu com a missão de oferecer equipamentos de medição de alta precisão para empresas que buscam eficiência sem necessidade de investimento fixo. Nosso compromisso é entregar equipamentos de última geração, sempre calibrados e prontos para uso, garantindo resultados confiáveis em cada projeto.
-          </p>
-          <p style="font-size: 1.3rem; max-width: 700px; margin: 0 auto 35px; line-height: 1.6; opacity: 0.9;">
-            Além da sublocação, também oferecemos consultoria especializada, auxiliando nossos clientes na operação correta dos equipamentos e na escolha das melhores soluções para cada necessidade.
-          </p>
-          <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 900px; margin: 0 auto;">
-            <div style="background: rgba(255, 255, 255, 0.2); padding: 20px; border-radius: 12px; flex: 1 1 45%; min-width: 320px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-              ✅ Indústria
-            </div>
-            <div style="background: rgba(255, 255, 255, 0.2); padding: 20px; border-radius: 12px; flex: 1 1 45%; min-width: 320px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-              ✅ Construção Civil
-            </div>
-            <div style="background: rgba(255, 255, 255, 0.2); padding: 20px; border-radius: 12px; flex: 1 1 45%; min-width: 320px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-              ✅ Engenharia Elétrica
-            </div>
-            <div style="background: rgba(255, 255, 255, 0.2); padding: 20px; border-radius: 12px; flex: 1 1 45%; min-width: 320px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-              ✅ Telecomunicações
-            </div>
-            <div style="background: rgba(255, 255, 255, 0.2); padding: 20px; border-radius: 12px; flex: 1 1 45%; min-width: 320px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-              ✅ Pesquisa e Desenvolvimento
+
+
+    <section id="products" class="py-12 bg-gray-900 text-white text-center">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-extrabold mb-8">Nossos Produtos</h2>
+
+        <!-- Featured Product -->
+        <div class="max-w-4xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg mb-8">
+          <div class="flex flex-col md:flex-row items-center gap-6">
+            <img src="/product1/WhatsApp Image 2025-02-08 at 8.18.45 AM.jpeg" alt="S1 SORTER"
+              class="w-full md:w-1/3 rounded-lg">
+            <div class="text-left">
+              <h3 class="text-2xl font-bold">S1 SORTER – Tecnologia de Análise de Ligas Metálicas com XRF Portátil</h3>
+              <p class="text-gray-300 mt-2">O S1 SORTER é um analisador portátil de fluorescência de raios X (XRF)
+                projetado para identificação rápida e precisa de ligas metálicas.</p>
+              <button id="seeMoreBtn1"
+                class="mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg shadow-md transition duration-300">
+                Veja Mais
+              </button>
+              <button
+                class="mt-4 ml-2 bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg shadow-md transition duration-300">
+                Obter Cotação
+              </button>
             </div>
           </div>
         </div>
-      </section>
-      
-      
-    
 
-
-
-          
-    
-      <section class="bg-gray-100 py-12">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-6 text-gray-800">Sobre o Grupo DJL</h2>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                O Grupo DJL é um fornecedor líder de produtos e serviços de alta qualidade. Estamos comprometidos em oferecer um valor excepcional aos nossos clientes e em criar relacionamentos duradouros baseados na confiança e excelência.
-            </p>
-            <div class="mt-8">
-                <img src="quality-control-inspector-writing-reports-while-analzying-manufactured-steel-rod-cylinders-industrial-building.jpg" alt="Sobre o Grupo DJL" class="w-full max-w-md mx-auto rounded-lg shadow-lg">
-            </div>
+        <!-- More Details (Hidden Initially) -->
+        <div id="moreDetails1" class="hidden max-w-4xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg mb-8">
+          <h3 class="text-2xl font-bold">Principais Benefícios</h3>
+          <ul class="text-gray-300 mt-2 text-left list-disc list-inside">
+            <li>✅ <strong>Rápido e Preciso</strong> – Resultados em segundos, sem necessidade de preparo da amostra.
+            </li>
+            <li>✅ <strong>Fácil de Usar</strong> – Tela sensível ao toque, sistema Windows e conexão via USB, Bluetooth
+              ou cartão SD.</li>
+            <li>✅ <strong>Portátil e Resistente</strong> – Design robusto para uso em campo, operando em temperaturas de
+              -10°C a +50°C.</li>
+            <li>✅ <strong>Segurança</strong> – Sem material radioativo, garantindo facilidade de transporte e
+              conformidade com normas.</li>
+            <li>✅ <strong>Versatilidade</strong> – Identifica elementos de ligas de aço, níquel, cobre e outras.</li>
+          </ul>
+          <div class="flex flex-wrap gap-4 mt-4">
+            <img src="/product1/WhatsApp Image 2025-02-08 at 8.18.45 AM (1).jpeg" alt="S1 SORTER"
+              class="w-1/3 rounded-lg">
+            <img src="/product1/WhatsApp Image 2025-02-08 at 8.18.45 AM.jpeg" alt="S1 SORTER" class="w-1/3 rounded-lg">
+            <img src="/product1/WhatsApp Image 2025-02-08 at 8.18.46 AM.jpeg" alt="S1 SORTER" class="w-1/3 rounded-lg">
+          </div>
         </div>
+
+        <!-- Second Product -->
+        <div class="max-w-4xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg mb-8">
+          <div class="flex flex-col md:flex-row items-center gap-6">
+            <img src="/product2/WhatsApp Image 2025-02-08 at 8.28.15 AM.jpeg" alt="Olympus Innov-X DC-2000C"
+              class="w-full md:w-1/3 rounded-lg">
+            <div class="text-left">
+              <h3 class="text-2xl font-bold">Analisador de XRF Olympus Innov-X DC-2000C Delta Classic Alloy</h3>
+              <p class="text-gray-300 mt-2">O Olympus Innov-X DC-2000C Delta Classic Alloy XRF Analyzer é um analisador
+                portátil de alto desempenho.</p>
+              <button id="seeMoreBtn2"
+                class="mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg shadow-md transition duration-300">
+                Veja Mais
+              </button>
+              <button
+                class="mt-4 ml-2 bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg shadow-md transition duration-300">
+                Obter Cotação
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- More Details for Second Product (Hidden Initially) -->
+        <div id="moreDetails2" class="hidden max-w-4xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg">
+          <h3 class="text-2xl font-bold">Principais Características</h3>
+          <ul class="text-gray-300 mt-2 text-left list-disc list-inside">
+            <li>✅ <strong>Análise de Ligas e Metais Preciosos</strong> – Mede com precisão a composição de ligas,
+              incluindo metais comuns e preciosos.</li>
+            <li>✅ <strong>Portátil e Fácil de Usar</strong> – Design leve e interface intuitiva para diversos ambientes.
+            </li>
+            <li>✅ <strong>Resultados Rápidos e Não Destrutivos</strong> – Oferece resultados instantâneos sem
+              necessidade de preparação da amostra.</li>
+          </ul>
+          <div class="flex flex-wrap gap-4 mt-4">
+            <img src="/product2/WhatsApp Image 2025-02-08 at 8.28.15 AM.jpeg" alt="Olympus Innov-X DC-2000C"
+              class="w-1/3 rounded-lg">
+            <img src="/product2/WhatsApp Image 2025-02-08 at 8.28.15 AM.jpeg" alt="Olympus Innov-X DC-2000C"
+              class="w-1/3 rounded-lg">
+            <img src="/product2/WhatsApp Image 2025-02-08 at 8.28.15 AM.jpeg" alt="Olympus Innov-X DC-2000C"
+              class="w-1/3 rounded-lg">
+          </div>
+        </div>
+      </div>
+
+
+<!-- Third Product -->
+<div class="max-w-4xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg mb-8">
+  <div class="flex flex-col md:flex-row items-center gap-6">
+    <img src="/product3/WhatsApp Image 2025-02-08 at 8.33.57 AM.jpeg" alt="Olympus DELTA Professional"
+      class="w-full md:w-1/3 rounded-lg">
+    <div class="text-left">
+      <h3 class="text-2xl font-bold">Analisador XRF Olympus DELTA Professional</h3>
+      <p class="text-gray-300 mt-2">O Olympus DELTA Professional é um analisador XRF portátil de alto desempenho,
+        ideal para testes rápidos e precisos em metais e materiais.</p>
+      <button id="seeMoreBtn3"
+        class="mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg shadow-md transition duration-300">
+        Veja Mais
+      </button>
+      <button
+        class="mt-4 ml-2 bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg shadow-md transition duration-300">
+        Obter Cotação
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- More Details for Third Product (Hidden Initially) -->
+<div id="moreDetails3" class="hidden max-w-4xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg">
+  <h3 class="text-2xl font-bold">Características e Benefícios</h3>
+  <ul class="text-gray-300 mt-2 text-left list-disc list-inside">
+    <li>✅ <strong>Alto desempenho</strong> – Tubo de 40kV e detector SDD para máxima precisão.</li>
+    <li>✅ <strong>Design portátil</strong> – Ideal para diversas aplicações analíticas.</li>
+    <li>✅ <strong>Resultados rápidos</strong> – Melhor custo-benefício com excelente velocidade.</li>
+    <li>✅ <strong>Tela sensível ao toque</strong> – Display LCD colorido para maior eficiência.</li>
+  </ul>
+  <div class="flex flex-wrap gap-4 mt-4">
+    <img src="/product3/WhatsApp Image 2025-02-08 at 8.40.46 AM.jpeg" alt="Olympus DELTA Professional"
+      class="w-1/3 rounded-lg">
+    <img src="/product3/WhatsApp Image 2025-02-08 at 8.40.46 AM (1).jpeg" alt="Olympus DELTA Professional"
+      class="w-1/3 rounded-lg">
+    <img src="/product3/WhatsApp Image 2025-02-08 at 8.40.45 AM.jpeg" alt="Olympus DELTA Professional"
+      class="w-1/3 rounded-lg">
+      <img src="/product3/WhatsApp Image 2025-02-08 at 8.40.45 AM (2).jpeg" alt="Olympus DELTA Professional"
+      class="w-1/3 rounded-lg">
+      <img src="/product3/WhatsApp Image 2025-02-08 at 8.34.31 AM.jpeg" alt="Olympus DELTA Professional"
+      class="w-1/3 rounded-lg">
+  </div>
+</div>
+
+
+
+
+
+<!-- Fourth Product -->
+<div class="max-w-4xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg mb-8">
+  <div class="flex flex-col md:flex-row items-center gap-6">
+    <img src="/product4/WhatsApp Image 2025-02-08 at 8.40.46 AM (2).jpeg" alt="Innov-X Olympus Element DE-2000" class="w-full md:w-1/3 rounded-lg">
+    <div class="text-left">
+      <h3 class="text-2xl font-bold">Analisador XRF Innov-X Olympus Element DE-2000 para Metais Preciosos e Ligas</h3>
+      <p class="text-gray-300 mt-2">O Innov-X Olympus Element DE-2000 é um analisador XRF portátil de última geração, projetado especificamente para a análise precisa de metais preciosos e ligas.</p>
+      <button id="seeMoreBtn4" class="mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg shadow-md transition duration-300">
+        Veja Mais
+      </button>
+      <button class="mt-4 ml-2 bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg shadow-md transition duration-300">
+        Obter Cotação
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- More Details for Fourth Product (Hidden Initially) -->
+<div id="moreDetails4" class="hidden max-w-4xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg">
+  <h3 class="text-2xl font-bold">Características e Benefícios</h3>
+  <ul class="text-gray-300 mt-2 text-left list-disc list-inside">
+    <li>✅ <strong>Alta Precisão</strong> – Fornece resultados rápidos e confiáveis na identificação e quantificação de metais preciosos e ligas metálicas.</li>
+    <li>✅ <strong>Tecnologia Avançada</strong> – Equipado com tecnologia XRF, o DE-2000 realiza análises não destrutivas sem necessidade de preparação das amostras.</li>
+    <li>✅ <strong>Portátil e Compacto</strong> – Ideal para uso em campo, com design ergonômico que facilita o manuseio.</li>
+  </ul>
+  <div class="flex flex-wrap gap-4 mt-4">
+    <img src="/product4/WhatsApp Image 2025-02-08 at 8.40.46 AM (2).jpeg" alt="Olympus DELTA Professional"
+      class="w-1/3 rounded-lg">
+    <img src="/product4/WhatsApp Image 2025-02-08 at 8.40.46 AM (2).jpeg" alt="Olympus DELTA Professional"
+      class="w-1/3 rounded-lg">
+  </div>
+</div>
+
+
+<!-- Fifth Product -->
+<div class="max-w-4xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg mb-8">
+  <div class="flex flex-col md:flex-row items-center gap-6">
+    <img src="/product5/WhatsApp Image 2025-02-08 at 8.46.42 AM.jpeg" alt="Durômetro Digital Novotest TEC-MIC-10" class="w-full md:w-1/3 rounded-lg">
+    <div class="text-left">
+      <h3 class="text-2xl font-bold">Durômetro Digital Normas ASTM A956 e DIN 50156 Novotest TEC-MIC-10</h3>
+      <p class="text-gray-300 mt-2">O Durômetro Digital Novotest TEC-MIC-10 é um equipamento de alta precisão projetado para medir a dureza de materiais metálicos e não metálicos de forma rápida e eficiente.</p>
+      <button id="seeMoreBtn5" class="mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg shadow-md transition duration-300">
+        Veja Mais
+      </button>
+      <button class="mt-4 ml-2 bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg shadow-md transition duration-300">
+        Obter Cotação
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- More Details for Fifth Product (Hidden Initially) -->
+<div id="moreDetails5" class="hidden max-w-4xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg">
+  <h3 class="text-2xl font-bold">Características e Benefícios</h3>
+  <ul class="text-gray-300 mt-2 text-left list-disc list-inside">
+    <li>✅ <strong>Conformidade com Normas</strong> – Atende às normas ASTM A956 e DIN 50156, garantindo medições precisas e confiáveis.</li>
+    <li>✅ <strong>Medidas Rápidas e Precisas</strong> – Permite medições rápidas com alta precisão, fornecendo resultados consistentes.</li>
+    <li>✅ <strong>Versatilidade</strong> – Ideal para medir a dureza de metais, ligas, plásticos e outros componentes industriais.</li>
+    <li>✅ <strong>Display Digital</strong> – Tela digital para leitura fácil e clara dos resultados em diferentes unidades de dureza.</li>
+    <li>✅ <strong>Portátil e Compacto</strong> – Design leve e ergonômico para uso em diversas condições de trabalho.</li>
+    <li>✅ <strong>Fácil Operação</strong> – Interface intuitiva, ideal mesmo para operadores com pouca experiência.</li>
+  </ul>
+  <div class="flex flex-wrap gap-4 mt-4">
+    <img src="/product5/WhatsApp Image 2025-02-08 at 8.46.42 AM.jpeg" alt="Durômetro Novotest TEC-MIC-10"
+      class="w-1/3 rounded-lg">
+    <img src="/product5/WhatsApp Image 2025-02-08 at 8.46.42 AM.jpeg" alt="Durômetro Novotest TEC-MIC-10"
+      class="w-1/3 rounded-lg">
+  </div>
+</div>
+
+<!-- Sixth Product -->
+<div class="max-w-4xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg mb-8">
+  <div class="flex flex-col md:flex-row items-center gap-6">
+    <img src="/product6/WhatsApp Image 2025-02-08 at 8.50.03 AM.jpeg" alt="Durômetro Digital NOVOTEST T-U3-BT" class="w-full md:w-1/3 rounded-lg">
+    <div class="text-left">
+      <h3 class="text-2xl font-bold">Durômetro Digital Portátil Bluetooth NOVOTEST T-U3-BT</h3>
+      <p class="text-gray-300 mt-2">O NOVOTEST T-U3-BT é um durômetro digital portátil avançado, utilizando a tecnologia UCI (Impedância de Contato Ultrassônica), com conexão Bluetooth e interface USB, garantindo precisão e praticidade em medições de dureza.</p>
+      <button id="seeMoreBtn6" class="mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg shadow-md transition duration-300">
+        Veja Mais
+      </button>
+      <button class="mt-4 ml-2 bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg shadow-md transition duration-300">
+        Obter Cotação
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- More Details for Sixth Product (Hidden Initially) -->
+<div id="moreDetails6" class="hidden max-w-4xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg">
+  <h3 class="text-2xl font-bold">Características e Benefícios</h3>
+  <ul class="text-gray-300 mt-2 text-left list-disc list-inside">
+    <li>✅ <strong>Tecnologia UCI</strong> – Medição de dureza por Impedância de Contato Ultrassônica, garantindo alta precisão.</li>
+    <li>✅ <strong>Conformidade com ASTM A1038</strong> – Atende aos padrões internacionais para garantir resultados confiáveis.</li>
+    <li>✅ <strong>Conexão Bluetooth</strong> – Facilita a transferência de dados e controle remoto do durômetro.</li>
+    <li>✅ <strong>Interface USB</strong> – Permite conexão fácil com computadores e sistemas de controle.</li>
+    <li>✅ <strong>Portátil e Compacto</strong> – Leve e fácil de transportar, ideal para medições em campo ou locais de difícil acesso.</li>
+    <li>✅ <strong>Display Digital</strong> – Tela clara e intuitiva para leitura rápida e precisa dos valores de dureza.</li>
+    <li>✅ <strong>Bateria de Longa Duração</strong> – Maior autonomia para testes prolongados sem necessidade de recarga frequente.</li>
+  </ul>
+  <div class="flex flex-wrap gap-4 mt-4">
+    <img src="/product6/WhatsApp Image 2025-02-08 at 8.50.04 AM (1).jpeg" alt="Durômetro Digital NOVOTEST T-U3-BT"
+      class="w-1/3 rounded-lg">
+    <img src="/product6/WhatsApp Image 2025-02-08 at 8.50.04 AM (2).jpeg" alt="Durômetro Digital NOVOTEST T-U3-BT"
+      class="w-1/3 rounded-lg">
+      <img src="/product6/WhatsApp Image 2025-02-08 at 8.50.04 AM.jpeg" alt="Durômetro Digital NOVOTEST T-U3-BT"
+      class="w-1/3 rounded-lg">
+      <img src="/product6/WhatsApp Image 2025-02-08 at 8.50.05 AM.jpeg" alt="Durômetro Digital NOVOTEST T-U3-BT"
+      class="w-1/3 rounded-lg">
+  </div>
+</div>
+
+
+
+<!-- Sétimo Produto -->
+<div class="max-w-4xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg mb-8">
+  <div class="flex flex-col md:flex-row items-center gap-6">
+    <img src="/product7/WhatsApp Image 2025-02-08 at 8.53.00 AM.jpeg" alt="P.A.T.T.I. Quantum Digital" class="w-full md:w-1/3 rounded-lg">
+    <div class="text-left">
+      <h3 class="text-2xl font-bold">P.A.T.T.I. Quantum Digital | MTest</h3>
+      <p class="text-gray-300 mt-2">Dispositivo digital avançado com sistema de pistão único, oferecendo medições de alta precisão para testes de dureza.</p>
+      <button id="seeMoreBtn7" class="mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg shadow-md transition duration-300">
+        Veja Mais
+      </button>
+      <button class="mt-4 ml-2 bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg shadow-md transition duration-300">
+        Obter Cotação
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Mais Detalhes para o 7º Produto (Oculto Inicialmente) -->
+<div id="moreDetails7" class="hidden max-w-4xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg">
+  <h3 class="text-2xl font-bold">Características e Benefícios</h3>
+  <ul class="text-gray-300 mt-2 text-left list-disc list-inside">
+    <li>✅ <strong>Tecnologia Digital Avançada</strong> – Proporciona medições precisas e rápidas com leitura clara no display digital.</li>
+    <li>✅ <strong>Sistema de Pistão Único</strong> – Maior estabilidade e precisão nas medições.</li>
+    <li>✅ <strong>Versatilidade</strong> – Adequado para testes de dureza em diversos materiais.</li>
+    <li>✅ <strong>Desempenho Confiável</strong> – Sensor de alta qualidade para medições consistentes.</li>
+  </ul>
+
+  <h3 class="text-2xl font-bold mt-6">P.A.T.T.I. Analog | SEMicro</h3>
+  <p class="text-gray-300 mt-2">Modelo analógico robusto, oferecendo medições confiáveis para testes de materiais industriais.</p>
+  <ul class="text-gray-300 mt-2 text-left list-disc list-inside">
+    <li>✅ <strong>Tecnologia Analógica de Alta Precisão</strong> – Medições rápidas e consistentes.</li>
+    <li>✅ <strong>Compacto e Robusto</strong> – Ideal para testes em campo e ambientes exigentes.</li>
+    <li>✅ <strong>Facilidade de Uso</strong> – Interface intuitiva para operação simples.</li>
+    <li>✅ <strong>Durabilidade</strong> – Construído para suportar condições de trabalho rigorosas.</li>
+  </ul>
+
+  <div class="flex flex-wrap gap-4 mt-4">
+    <img src="/product7/WhatsApp Image 2025-02-08 at 8.53.00 AM.jpeg" alt="P.A.T.T.I. Quantum Digital" class="w-1/3 rounded-lg">
+    <img src="/product7/WhatsApp Image 2025-02-08 at 8.53.00 AM.jpeg" alt="P.A.T.T.I. Analog SEMicro" class="w-1/3 rounded-lg">
+  </div>
+</div>
+
     </section>
-    
-          
-
-          <section style="padding: 60px 20px; text-align: center; font-family: Arial, sans-serif;">
-            <h2 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px;">
-              Nossos Serviços
-            </h2>
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 900px; margin: 0 auto;">
-              <div style="background-color: #f7f7f7; padding: 20px; border-radius: 12px; flex: 1 1 45%; min-width: 320px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                🔹 Sublocação de Equipamentos de Medição
-                <p style="font-size: 1rem; opacity: 0.9;">Alugamos equipamentos de última geração para medições industriais, laboratoriais e topográficas, garantindo precisão e confiabilidade.</p>
-              </div>
-              <div style="background-color: #f7f7f7; padding: 20px; border-radius: 12px; flex: 1 1 45%; min-width: 320px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                🔹 Consultoria Técnica Especializada
-                <p style="font-size: 1rem; opacity: 0.9;">Oferecemos suporte completo para empresas que precisam de orientação na escolha e uso correto dos equipamentos.</p>
-              </div>
-            </div>
-            <p style="font-size: 1.3rem; max-width: 700px; margin: 40px auto 35px; line-height: 1.6; opacity: 0.9;">
-              💡 Vantagens da sublocação:
-              <br>✔ Custo-benefício superior à compra de equipamentos
-              <br>✔ Evite gastos com manutenção e calibração
-              <br>✔ Equipamentos prontos para uso imediato
-            </p>
-            <h3 style="font-size: 2rem; margin-top: 40px;">Missão, Visão e Valores</h3>
-            <p style="font-size: 1.3rem; max-width: 700px; margin: 20px auto; line-height: 1.6; opacity: 0.9;">
-              🔹 <strong>Missão:</strong> Oferecer equipamentos de medição de alta precisão por meio de sublocação, garantindo praticidade e economia para nossos clientes.
-              <br>🔹 <strong>Visão:</strong> Ser referência no setor de sublocação de equipamentos de medição, inovando e trazendo sempre as melhores soluções para o mercado.
-              <br>🔹 <strong>Valores:</strong> Compromisso com a qualidade, Atendimento personalizado, Tecnologia de ponta, Ética e transparência.
-            </p>
-          </section>
-
-
-          <section class="bg-gray-50 py-12">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Perguntas Frequentes</h2>
-                <p class="text-gray-600 text-center mb-8">
-                    Tem dúvidas? Nós temos as respostas! Confira abaixo as perguntas mais frequentes.
-                </p>
-                <div class="space-y-6 max-w-3xl mx-auto">
-                    <!-- Pergunta 1 -->
-                    <details class="bg-white shadow-md rounded-lg p-4">
-                        <summary class="text-lg font-semibold text-gray-800 cursor-pointer">
-                            Quais serviços o Grupo DJL oferece?
-                        </summary>
-                        <p class="text-gray-600 mt-2">
-                            O Grupo DJL fornece produtos e serviços de alta qualidade, personalizados para atender às suas necessidades. Nossas ofertas incluem [serviços/produtos específicos].
-                        </p>
-                    </details>
-                    <!-- Pergunta 2 -->
-                    <details class="bg-white shadow-md rounded-lg p-4">
-                        <summary class="text-lg font-semibold text-gray-800 cursor-pointer">
-                            Como posso entrar em contato com a equipe de suporte?
-                        </summary>
-                        <p class="text-gray-600 mt-2">
-                            Você pode entrar em contato conosco através do formulário acima ou enviando um e-mail para support@djlgroup.com. Nosso prazo de resposta é de até 24 horas.
-                        </p>
-                    </details>
-                    <!-- Pergunta 3 -->
-                    <details class="bg-white shadow-md rounded-lg p-4">
-                        <summary class="text-lg font-semibold text-gray-800 cursor-pointer">
-                            Onde está localizado o Grupo DJL?
-                        </summary>
-                        <p class="text-gray-600 mt-2">
-                            O Grupo DJL está sediado em [sua localização]. Para mais detalhes, confira nossa página "Sobre Nós".
-                        </p>
-                    </details>
-                    <!-- Pergunta 4 -->
-                    <details class="bg-white shadow-md rounded-lg p-4">
-                        <summary class="text-lg font-semibold text-gray-800 cursor-pointer">
-                            Quais métodos de pagamento vocês aceitam?
-                        </summary>
-                        <p class="text-gray-600 mt-2">
-                            Aceitamos todos os principais cartões de crédito, PayPal e transferências bancárias. Para mais detalhes, entre em contato com nossa equipe de suporte.
-                        </p>
-                    </details>
-                </div>
-            </div>
-        </section>
-        
-          
-
-
-
 
 
     
-          <section class="container mx-auto my-12 px-4 flex flex-col items-center text-center">
-            <h2 class="text-4xl font-bold text-gray-900 mb-4">Entre em Contato</h2>
-            <p class="text-gray-600 mb-8 max-w-lg">
-              Tem alguma dúvida ou precisa de assistência? Preencha o formulário abaixo e entraremos em contato rapidamente.
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
-              <!-- Formulário de Contato -->
-              <form class="bg-white shadow-lg rounded-lg px-8 py-6 w-full">
-                <div class="mb-6">
-                  <label class="block text-gray-700 font-semibold mb-2" for="name">Nome</label>
-                  <input class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500" id="name" type="text" placeholder="Digite seu nome">
-                </div>
-                <div class="mb-6">
-                  <label class="block text-gray-700 font-semibold mb-2" for="email">E-mail</label>
-                  <input class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500" id="email" type="email" placeholder="Digite seu e-mail">
-                </div>
-                <div class="mb-6">
-                  <label class="block text-gray-700 font-semibold mb-2" for="message">Mensagem</label>
-                  <textarea class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500" id="message" rows="5" placeholder="Digite sua mensagem"></textarea>
-                </div>
-                <button class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">Enviar Mensagem</button>
-              </form>
-              <!-- Mapa -->
-              <div class="w-full h-64 md:h-auto">
-                <iframe class="w-full h-full rounded-lg shadow-lg" src="https://www.google.com/maps/embed?..." allowfullscreen loading="lazy"></iframe>
-              </div>
-            </div>
-          </section>
-          
-          
-          
-      </main>
-    
-      <footer class="bg-gray-900 text-gray-300 py-12">
-        <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 text-center ">
-            <!-- Sobre -->
-            <div>
-                <h4 class="text-2xl font-semibold text-white mb-6 tracking-wide">Sobre o Grupo DJL</h4>
-                <p class="text-sm leading-relaxed">
-                    O Grupo DJL se dedica a fornecer produtos de alta qualidade e serviços excepcionais para impulsionar negócios em todo o mundo.
-                </p>
-            </div>
-    
-            <!-- Links Rápidos -->
-            <div>
-                <h4 class="text-2xl font-semibold text-white mb-6 tracking-wide">Links Rápidos</h4>
-                <ul class="text-sm space-y-3">
-                    <li><a href="#home" class="hover:text-blue-400 transition duration-300 transform hover:scale-105">Início</a></li>
-                    <li><a href="#about" class="hover:text-blue-400 transition duration-300 transform hover:scale-105">Sobre Nós</a></li>
-                    <li><a href="#products" class="hover:text-blue-400 transition duration-300 transform hover:scale-105">Produtos</a></li>
-                    <li><a href="#contact" class="hover:text-blue-400 transition duration-300 transform hover:scale-105">Contato</a></li>
-                </ul>
-            </div>
-    
-            <!-- Contato -->
-            <div>
-                <h4 class="text-2xl font-semibold text-white mb-6 tracking-wide">Entre em Contato</h4>
-                <ul class="text-sm space-y-3">
-                    <li>Email: <a href="mailto:info@djlgroup.com" class="hover:text-blue-400 transition duration-300 transform hover:scale-105">info@djlgroup.com</a></li>
-                    <li>Telefone: <a href="tel:+1234567890" class="hover:text-blue-400 transition duration-300 transform hover:scale-105">+1 234 567 890</a></li>
-                    <li>Endereço: 123 Rua Empresarial, Cidade, País</li>
-                </ul>
-            </div>
-        </div>
-        <div class="border-t border-gray-700 mt-12 pt-6 text-center text-sm text-gray-500">
-            &copy; 2023 Grupo DJL. Todos os direitos reservados.
-        </div>
-    </footer>
-    
-      
 
 
 
@@ -576,11 +574,333 @@
 
 
 
-    
     <script>
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
+      document.getElementById('seeMoreBtn1').addEventListener('click', function () {
+        document.getElementById('moreDetails1').classList.toggle('hidden');
+      });
+
+      document.getElementById('seeMoreBtn2').addEventListener('click', function () {
+        document.getElementById('moreDetails2').classList.toggle('hidden');
+      });
+
+      document.getElementById('seeMoreBtn3').addEventListener('click', function () {
+        document.getElementById('moreDetails3').classList.toggle('hidden');
+      });
+      
+  document.getElementById('seeMoreBtn4').addEventListener('click', function() {
+    document.getElementById('moreDetails4').classList.toggle('hidden');
+  });
+
+
+  document.getElementById('seeMoreBtn5').addEventListener('click', function() {
+    document.getElementById('moreDetails5').classList.toggle('hidden');
+  });
+
+  
+  document.getElementById('seeMoreBtn6').addEventListener('click', function() {
+    document.getElementById('moreDetails6').classList.toggle('hidden');
+  });
+
+  
+  document.getElementById('seeMoreBtn7').addEventListener('click', function() {
+    document.getElementById('moreDetails7').classList.toggle('hidden');
+  });
+
+
+
     </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section
+      style="padding: 80px 20px; text-align: center; font-family: Arial, sans-serif; background: url('senior-businessman-visiting-factory-plant-examining-manufactured-products-with-facility-worker.jpg') center/cover no-repeat; color: white; position: relative;">
+      <div
+        style="background: rgba(0, 0, 0, 0.6); padding: 60px 20px; border-radius: 12px; max-width: 900px; margin: auto;">
+        <h2
+          style="font-size: 2.5rem; font-weight: bold; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px;">
+          Sobre a DJL Group
+        </h2>
+        <p style="font-size: 1.3rem; max-width: 700px; margin: 0 auto 35px; line-height: 1.6; opacity: 0.9;">
+          A DJL Group nasceu com a missão de oferecer equipamentos de medição de alta precisão para empresas que buscam
+          eficiência sem necessidade de investimento fixo. Nosso compromisso é entregar equipamentos de última geração,
+          sempre calibrados e prontos para uso, garantindo resultados confiáveis em cada projeto.
+        </p>
+        <p style="font-size: 1.3rem; max-width: 700px; margin: 0 auto 35px; line-height: 1.6; opacity: 0.9;">
+          Além da sublocação, também oferecemos consultoria especializada, auxiliando nossos clientes na operação
+          correta dos equipamentos e na escolha das melhores soluções para cada necessidade.
+        </p>
+        <div
+          style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 900px; margin: 0 auto;">
+          <div
+            style="background: rgba(255, 255, 255, 0.2); padding: 20px; border-radius: 12px; flex: 1 1 45%; min-width: 320px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+            ✅ Indústria
+          </div>
+          <div
+            style="background: rgba(255, 255, 255, 0.2); padding: 20px; border-radius: 12px; flex: 1 1 45%; min-width: 320px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+            ✅ Construção Civil
+          </div>
+          <div
+            style="background: rgba(255, 255, 255, 0.2); padding: 20px; border-radius: 12px; flex: 1 1 45%; min-width: 320px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+            ✅ Engenharia Elétrica
+          </div>
+          <div
+            style="background: rgba(255, 255, 255, 0.2); padding: 20px; border-radius: 12px; flex: 1 1 45%; min-width: 320px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+            ✅ Telecomunicações
+          </div>
+          <div
+            style="background: rgba(255, 255, 255, 0.2); padding: 20px; border-radius: 12px; flex: 1 1 45%; min-width: 320px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+            ✅ Pesquisa e Desenvolvimento
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+    <section class="bg-gray-100 py-12">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">Sobre o Grupo DJL</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          O Grupo DJL é um fornecedor líder de produtos e serviços de alta qualidade. Estamos comprometidos em oferecer
+          um valor excepcional aos nossos clientes e em criar relacionamentos duradouros baseados na confiança e
+          excelência.
+        </p>
+        <div class="mt-8">
+          <img
+            src="quality-control-inspector-writing-reports-while-analzying-manufactured-steel-rod-cylinders-industrial-building.jpg"
+            alt="Sobre o Grupo DJL" class="w-full max-w-md mx-auto rounded-lg shadow-lg">
+        </div>
+      </div>
+    </section>
+
+
+
+    <section style="padding: 60px 20px; text-align: center; font-family: Arial, sans-serif;">
+      <h2
+        style="font-size: 2.5rem; font-weight: bold; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px;">
+        Nossos Serviços
+      </h2>
+      <div
+        style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 900px; margin: 0 auto;">
+        <div
+          style="background-color: #f7f7f7; padding: 20px; border-radius: 12px; flex: 1 1 45%; min-width: 320px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+          🔹 Sublocação de Equipamentos de Medição
+          <p style="font-size: 1rem; opacity: 0.9;">Alugamos equipamentos de última geração para medições industriais,
+            laboratoriais e topográficas, garantindo precisão e confiabilidade.</p>
+        </div>
+        <div
+          style="background-color: #f7f7f7; padding: 20px; border-radius: 12px; flex: 1 1 45%; min-width: 320px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+          🔹 Consultoria Técnica Especializada
+          <p style="font-size: 1rem; opacity: 0.9;">Oferecemos suporte completo para empresas que precisam de orientação
+            na escolha e uso correto dos equipamentos.</p>
+        </div>
+      </div>
+      <p style="font-size: 1.3rem; max-width: 700px; margin: 40px auto 35px; line-height: 1.6; opacity: 0.9;">
+        💡 Vantagens da sublocação:
+        <br>✔ Custo-benefício superior à compra de equipamentos
+        <br>✔ Evite gastos com manutenção e calibração
+        <br>✔ Equipamentos prontos para uso imediato
+      </p>
+      <h3 style="font-size: 2rem; margin-top: 40px;">Missão, Visão e Valores</h3>
+      <p style="font-size: 1.3rem; max-width: 700px; margin: 20px auto; line-height: 1.6; opacity: 0.9;">
+        🔹 <strong>Missão:</strong> Oferecer equipamentos de medição de alta precisão por meio de sublocação, garantindo
+        praticidade e economia para nossos clientes.
+        <br>🔹 <strong>Visão:</strong> Ser referência no setor de sublocação de equipamentos de medição, inovando e
+        trazendo sempre as melhores soluções para o mercado.
+        <br>🔹 <strong>Valores:</strong> Compromisso com a qualidade, Atendimento personalizado, Tecnologia de ponta,
+        Ética e transparência.
+      </p>
+    </section>
+
+
+    <section class="bg-gray-50 py-12">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Perguntas Frequentes</h2>
+        <p class="text-gray-600 text-center mb-8">
+          Tem dúvidas? Nós temos as respostas! Confira abaixo as perguntas mais frequentes.
+        </p>
+        <div class="space-y-6 max-w-3xl mx-auto">
+          <!-- Pergunta 1 -->
+          <details class="bg-white shadow-md rounded-lg p-4">
+            <summary class="text-lg font-semibold text-gray-800 cursor-pointer">
+              Quais serviços o Grupo DJL oferece?
+            </summary>
+            <p class="text-gray-600 mt-2">
+              O Grupo DJL fornece produtos e serviços de alta qualidade, personalizados para atender às suas
+              necessidades. Nossas ofertas incluem [serviços/produtos específicos].
+            </p>
+          </details>
+          <!-- Pergunta 2 -->
+          <details class="bg-white shadow-md rounded-lg p-4">
+            <summary class="text-lg font-semibold text-gray-800 cursor-pointer">
+              Como posso entrar em contato com a equipe de suporte?
+            </summary>
+            <p class="text-gray-600 mt-2">
+              Você pode entrar em contato conosco através do formulário acima ou enviando um e-mail para
+              support@djlgroup.com. Nosso prazo de resposta é de até 24 horas.
+            </p>
+          </details>
+          <!-- Pergunta 3 -->
+          <details class="bg-white shadow-md rounded-lg p-4">
+            <summary class="text-lg font-semibold text-gray-800 cursor-pointer">
+              Onde está localizado o Grupo DJL?
+            </summary>
+            <p class="text-gray-600 mt-2">
+              O Grupo DJL está sediado em [sua localização]. Para mais detalhes, confira nossa página "Sobre Nós".
+            </p>
+          </details>
+          <!-- Pergunta 4 -->
+          <details class="bg-white shadow-md rounded-lg p-4">
+            <summary class="text-lg font-semibold text-gray-800 cursor-pointer">
+              Quais métodos de pagamento vocês aceitam?
+            </summary>
+            <p class="text-gray-600 mt-2">
+              Aceitamos todos os principais cartões de crédito, PayPal e transferências bancárias. Para mais detalhes,
+              entre em contato com nossa equipe de suporte.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+    <section class="container mx-auto my-12 px-4 flex flex-col items-center text-center">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">Entre em Contato</h2>
+      <p class="text-gray-600 mb-8 max-w-lg">
+        Tem alguma dúvida ou precisa de assistência? Preencha o formulário abaixo e entraremos em contato rapidamente.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
+        <!-- Formulário de Contato -->
+        <form class="bg-white shadow-lg rounded-lg px-8 py-6 w-full">
+          <div class="mb-6">
+            <label class="block text-gray-700 font-semibold mb-2" for="name">Nome</label>
+            <input class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500" id="name" type="text"
+              placeholder="Digite seu nome">
+          </div>
+          <div class="mb-6">
+            <label class="block text-gray-700 font-semibold mb-2" for="email">E-mail</label>
+            <input class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500" id="email" type="email"
+              placeholder="Digite seu e-mail">
+          </div>
+          <div class="mb-6">
+            <label class="block text-gray-700 font-semibold mb-2" for="message">Mensagem</label>
+            <textarea class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500" id="message" rows="5"
+              placeholder="Digite sua mensagem"></textarea>
+          </div>
+          <button
+            class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">Enviar
+            Mensagem</button>
+        </form>
+        <!-- Mapa -->
+        <div class="w-full h-64 md:h-auto">
+          <iframe class="w-full h-full rounded-lg shadow-lg" src="https://www.google.com/maps/embed?..." allowfullscreen
+            loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+
+
+
+  </main>
+
+  <footer class="bg-gray-900 text-gray-300 py-12">
+    <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 text-center ">
+      <!-- Sobre -->
+      <div>
+        <h4 class="text-2xl font-semibold text-white mb-6 tracking-wide">Sobre o Grupo DJL</h4>
+        <p class="text-sm leading-relaxed">
+          O Grupo DJL se dedica a fornecer produtos de alta qualidade e serviços excepcionais para impulsionar negócios
+          em todo o mundo.
+        </p>
+      </div>
+
+      <!-- Links Rápidos -->
+      <div>
+        <h4 class="text-2xl font-semibold text-white mb-6 tracking-wide">Links Rápidos</h4>
+        <ul class="text-sm space-y-3">
+          <li><a href="#home" class="hover:text-blue-400 transition duration-300 transform hover:scale-105">Início</a>
+          </li>
+          <li><a href="#about" class="hover:text-blue-400 transition duration-300 transform hover:scale-105">Sobre
+              Nós</a></li>
+          <li><a href="#products"
+              class="hover:text-blue-400 transition duration-300 transform hover:scale-105">Produtos</a></li>
+          <li><a href="#contact"
+              class="hover:text-blue-400 transition duration-300 transform hover:scale-105">Contato</a></li>
+        </ul>
+      </div>
+
+      <!-- Contato -->
+      <div>
+        <h4 class="text-2xl font-semibold text-white mb-6 tracking-wide">Entre em Contato</h4>
+        <ul class="text-sm space-y-3">
+          <li>Email: <a href="mailto:info@djlgroup.com"
+              class="hover:text-blue-400 transition duration-300 transform hover:scale-105">info@djlgroup.com</a></li>
+          <li>Telefone: <a href="tel:+1234567890"
+              class="hover:text-blue-400 transition duration-300 transform hover:scale-105">+1 234 567 890</a></li>
+          <li>Endereço: 123 Rua Empresarial, Cidade, País</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-gray-700 mt-12 pt-6 text-center text-sm text-gray-500">
+      &copy; 2023 Grupo DJL. Todos os direitos reservados.
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+      document.querySelector('.nav-links').classList.toggle('active');
+    });
+  </script>
 </body>
+
 </html>
